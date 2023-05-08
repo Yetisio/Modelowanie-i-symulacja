@@ -37,7 +37,6 @@ dFp=0;
 
 %wyswietlanie wykresow
 tiledlayout(3,2);
-%/////wiersz 1\\\\\
 %dTzew=2
 dTzew=2;
 %Warunki poczatkowe
@@ -50,7 +49,6 @@ nexttile(1);
 plot(t.tout,t.Twew,Color="#FF00FF"), hold on;
 nexttile(2);
 plot(t.tout,t.Tp,Color="#0000FF"), hold on;
-
 %Tzew0=TzewN+2, Pg0=0.7*PgN
 %Warunki poczatkowe
 Tzew0 = TzewN+2; Fp0 = fPN; Pg0 = 0.7*PgN;
@@ -63,7 +61,6 @@ nexttile(1);
 plot(t.tout,t.Twew,Color="#FF0000"), hold on;
 nexttile(2);
 plot(t.tout,t.Tp,Color=	"#77AC30"), hold on;
-
 %Tzew0=TzewN+2, Pg0=0.7*PgN, Fp0=0.8*fPN
 %Warunki poczatkowe
 Tzew0 = TzewN+2; Fp0 = 0.8*fPN; Pg0 = 0.7*PgN;
@@ -78,8 +75,7 @@ legend("PgN, TzewN, Fpn","70%PgN, TzewN+2, FpN", "70%PgN, TzewN+2, 80%FpN");
 nexttile(2);
 plot(t.tout,t.Tp,Color="#000000"),grid on, hold on, title("Temperatura poddasza - dTzew=2"), xlabel("Czas [s]"), ylabel("Temperatura [^oC]");
 legend("PgN, TzewN, Fpn","70%PgN, TzewN+2, FpN", "70%PgN, TzewN+2, 80%FpN");
-
-%/////wiersz 2\\\\\
+%wiersz 2
 %dPg=0.15*PgN
 dTzew = 0; dPg = 0.15*PgN; dFp = 0;
 %Warunki poczatkowe
@@ -124,7 +120,7 @@ nexttile(4);
 plot(t.tout,t.Tp,Color="#000000"),grid on, hold on, title("Temperatura poddasza - dPg = 15%PgN"), xlabel("Czas [s]"), ylabel("Temperatura [^oC]");
 legend("PgN, TzewN, Fpn","70%PgN, TzewN+2, FpN", "70%PgN, TzewN+2, 80%FpN");
 
-%/////wiersz 3\\\\\
+%/////wiersz3\\\\\
 %dFp=0.3*fPN
 dTzew = 0; dPg = PgN; dFp = 0.3*fPN;
 %Warunki poczatkowe
