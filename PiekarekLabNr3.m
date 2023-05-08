@@ -22,7 +22,7 @@ Cvp=cpp*rop*Vp;
 %Warunki poczatkowych
 Tzew0 = TzewN;
 Fp0 = fPN;
-Pg0 = PgN*0.7;
+Pg0 = PgN;
 
 %Stan równowagi
 %Twew0=Tzew0+(Pg0/(K1+(cpp*rop*Fp0)+(Kp*Kd)/(Kp+Kd)));
