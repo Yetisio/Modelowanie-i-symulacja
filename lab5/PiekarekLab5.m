@@ -49,23 +49,30 @@ dFp=0;
   [t]=sim('PiekarekLab5_si', czas);
   nexttile(1);
   plot(t.aT,Color="#0000FF"), hold on;
-  legend("Wykres pierworny z Kp i Ti");
   Kp1=0.5*((0.9*T)/(k*T0));
   Ti=3.33*T0;
   %symulacja
   [t]=sim('PiekarekLab5_si', czas);
   %wykresy
-  nexttile(2);
+  nexttile(1);
   plot(t.aT,Color="#FF00FF"), hold on;
-  legend("Wykres zmiany Kp na Kp*0.5");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Kp na Kp*0.5");
+
+
+  Kp1=(0.9*T)/(k*T0);
+  Ti=3.33*T0;
+  dU=5;
+  [t]=sim('PiekarekLab5_si', czas);
+  nexttile(2);
+  plot(t.aT,Color="#0000FF"), hold on;
   Kp1=((0.9*T)/(k*T0));
   Ti=0.2*(3.33*T0);
   %symulacja
   [t]=sim('PiekarekLab5_si', czas);
-  %wykresy
-  nexttile(3);
+  %wykresy Ti na Ti*0,2
+  nexttile(2);
   plot(t.aT,Color="#00000F"), hold on; 
-  legend("Wykres zmiany Ti na Ti*0.2");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Ti na Ti*0.2");
   
   %WIERSZ 2
 
@@ -75,23 +82,27 @@ dFp=0;
   [t]=sim('PiekarekLab5_si', czas);
   nexttile(4);
   plot(t.aT,Color="#0000FF"), hold on;
-  legend("Wykres pierworny z Kp i Ti");
 
-
+  % wykresy Kp na Kp*2
   Kp1=2*((0.9*T)/(k*T0));
   Ti=3.33*T0;
   dU=5;
   [t]=sim('PiekarekLab5_si', czas);
-  nexttile(5);
+  nexttile(4);
   plot(t.aT,Color="#FF00FF"), hold on;
-  legend("Wykres zmiany z Kp*2");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany z Kp*2");
 
-
+  Kp1=(0.9*T)/(k*T0);
+  Ti=3.33*T0;
+  dU=5;
+  [t]=sim('PiekarekLab5_si', czas);
+  nexttile(5);
+  plot(t.aT,Color="#0000FF"), hold on;
   Kp1=(0.9*T)/(k*T0);
   Ti=5*3.33*T0;
   dU=5;
   [t]=sim('PiekarekLab5_si', czas);
-  nexttile(6);
+  nexttile(5);
   plot(t.aT,Color="#00000F"), hold on;
-  legend("Wykres zmiany z Ti*5 ");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany z Ti*5 ");
 
