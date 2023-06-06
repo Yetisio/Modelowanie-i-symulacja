@@ -25,16 +25,14 @@ Pg0 = PgN;
 Twew0=Tzew0+(Pg0/(K1+(cpp*rop*Fp0)+(Kp*Kd)/(Kp+Kd)));
 Tp0=(Kp*Twew0+Kd*Tzew0)/(Kp+Kd);
 %zaklocenie
-czas=700; %bylo 50000
+czas=1000; %bylo 50000
 czas_skok=0;
 dTzew=0;
 dPg=0.2*PgN;
 dFp=0;
 %lab4 dPg=0.2*PgN czas_skok=0
 %wyswietlanie wykresow
- 
-
- tiledlayout(2,3);
+  tiledlayout(2,1);
 % WIERSZ 1
   dPg=0.2*PgN;
   k=9/dPg;
@@ -49,60 +47,48 @@ dFp=0;
   [t]=sim('PiekarekLab5_si', czas);
   nexttile(1);
   plot(t.aT,Color="#0000FF"), hold on;
-  Kp1=0.5*((0.9*T)/(k*T0));
-  Ti=3.33*T0;
+
+%wykresy Ti na Ti*5
+  Kp1=(0.9*T)/(k*T0);
+  Ti=5*3.33*T0;
   %symulacja
   [t]=sim('PiekarekLab5_si', czas);
   %wykresy
   nexttile(1);
-  plot(t.aT,Color="#FF00FF"), hold on;
-  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Kp na Kp*0.5");
+  plot(t.aT,Color="#00000F"), hold on;
 
+% wykresy Kp na Kp*0.5
+  Kp1=0.5*((0.9*T)/(k*T0));
+  Ti=3.33*T0;
+  dU=5;
+  [t]=sim('PiekarekLab5_si', czas);
+  nexttile(1);
+  plot(t.aT,Color="#FF00FF"),grid on, hold on, title("Działanie regulatora na modelu - przykład 1"), xlabel("Czas [s]");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Ti na Ti*5","Wykres zmiany Kp na Kp*0.5");
 
+%WIERSZ 2
+%pierworny
   Kp1=(0.9*T)/(k*T0);
   Ti=3.33*T0;
   dU=5;
   [t]=sim('PiekarekLab5_si', czas);
   nexttile(2);
   plot(t.aT,Color="#0000FF"), hold on;
+
+%wykresy Ti na Ti*0,5
   Kp1=((0.9*T)/(k*T0));
-  Ti=0.2*(3.33*T0);
+  Ti=0.5*(3.33*T0);
   %symulacja
   [t]=sim('PiekarekLab5_si', czas);
-  %wykresy Ti na Ti*0,2
   nexttile(2);
   plot(t.aT,Color="#00000F"), hold on; 
-  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Ti na Ti*0.2");
-  
-  %WIERSZ 2
 
-  Kp1=(0.9*T)/(k*T0);
+% wykresy Kp na Kp*1.5
+  Kp1=1.5*((0.9*T)/(k*T0));
   Ti=3.33*T0;
   dU=5;
   [t]=sim('PiekarekLab5_si', czas);
-  nexttile(4);
-  plot(t.aT,Color="#0000FF"), hold on;
-
-  % wykresy Kp na Kp*2
-  Kp1=2*((0.9*T)/(k*T0));
-  Ti=3.33*T0;
-  dU=5;
-  [t]=sim('PiekarekLab5_si', czas);
-  nexttile(4);
-  plot(t.aT,Color="#FF00FF"), hold on;
-  legend("Wykres pierworny z Kp i Ti","Wykres zmiany z Kp*2");
-
-  Kp1=(0.9*T)/(k*T0);
-  Ti=3.33*T0;
-  dU=5;
-  [t]=sim('PiekarekLab5_si', czas);
-  nexttile(5);
-  plot(t.aT,Color="#0000FF"), hold on;
-  Kp1=(0.9*T)/(k*T0);
-  Ti=5*3.33*T0;
-  dU=5;
-  [t]=sim('PiekarekLab5_si', czas);
-  nexttile(5);
-  plot(t.aT,Color="#00000F"), hold on;
-  legend("Wykres pierworny z Kp i Ti","Wykres zmiany z Ti*5 ");
+  nexttile(2);
+  plot(t.aT,Color="#FF00FF"),grid on, hold on, title("Działanie regulatora na modelu - przykład 2"), xlabel("Czas [s]");
+  legend("Wykres pierworny z Kp i Ti","Wykres zmiany Ti na Ti*0.5","Wykres zmiany z Kp*1.5");
 
